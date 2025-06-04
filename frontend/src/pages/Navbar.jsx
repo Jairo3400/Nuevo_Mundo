@@ -1,19 +1,24 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './estrilo.css';  // Importa el archivo CSS
+
 
 function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-red-500">Códice Chugchilán</h1>
+    <header>
+      <div className="container mx-auto flex justify-between items-center p-4">
+        <h1 className="text-2xl font-bold text-yellow-300 hover:text-white cursor-pointer transition-all duration-300">
+          Códice Chugchilán
+        </h1>
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden focus:outline-none"
+          className="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-red-500 hover:bg-red-600 focus:outline-none transition-all duration-300 transform hover:scale-110"
         >
           <svg
-            className="w-6 h-6"
+            className="w-6 h-6 text-white"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -22,12 +27,22 @@ function Navbar() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <nav className={`md:flex gap-6 ${open ? 'block' : 'hidden'} md:block`}>          
-          <Link to="/" className="hover:text-red-400 transition">Inicio</Link>
-          <Link to="/cultura" className="hover:text-red-400 transition">Cultura</Link>
-          <Link to="/comidas" className="hover:text-red-400 transition">Comidas</Link>
-          <Link to="/actividades" className="hover:text-red-400 transition">Actividades</Link>
-          <Link to="/realidad" className="hover:text-red-400 transition">Realidad</Link>
+        <nav className={`md:flex gap-6 ${open ? 'block' : 'hidden'} md:block`}>
+          <Link to="/" className="text-lg text-white hover:text-yellow-300 transition-all duration-300">
+            Inicio
+          </Link>
+          <Link to="/cultura" className="text-lg text-white hover:text-yellow-300 transition-all duration-300">
+            Cultura
+          </Link>
+          <Link to="/comidas" className="text-lg text-white hover:text-yellow-300 transition-all duration-300">
+            Comidas
+          </Link>
+          <Link to="/actividades" className="text-lg text-white hover:text-yellow-300 transition-all duration-300">
+            Actividades
+          </Link>
+          <Link to="/realidad" className="text-lg text-white hover:text-yellow-300 transition-all duration-300">
+            Realidad
+          </Link>
         </nav>
       </div>
     </header>
